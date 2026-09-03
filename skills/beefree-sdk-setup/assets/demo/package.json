@@ -1,0 +1,12 @@
+{
+  "name": "beefree-sdk-demo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Beefree SDK local demo: token endpoint plus a page that loads the builder and shows the save output",
+  "engines": {
+    "node": ">=20.6"
+  },
+  "scripts": {
+    "start": "node --env-file=.env server.js"
+  }
+}

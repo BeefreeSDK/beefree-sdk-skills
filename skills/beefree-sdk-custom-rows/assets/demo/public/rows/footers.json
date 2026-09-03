@@ -1,0 +1,360 @@
+[
+  {
+    "columns": [
+      {
+        "grid-columns": 12,
+        "modules": [
+          {
+            "descriptor": {
+              "computedStyle": {
+                "align": "center"
+              },
+              "divider": {
+                "style": {
+                  "border-top": "1px solid #F0F0F0",
+                  "height": "0px",
+                  "width": "100%"
+                }
+              },
+              "style": {
+                "padding-bottom": "30px",
+                "padding-left": "10px",
+                "padding-right": "10px",
+                "padding-top": "15px"
+              }
+            },
+            "locked": false,
+            "type": "mailup-bee-newsletter-modules-divider",
+            "uuid": "82dd78ca-bd34-44b4-8ae6-4233fd37c5d5"
+          },
+          {
+            "descriptor": {
+              "computedStyle": {
+                "hideContentOnAmp": false,
+                "hideContentOnDesktop": false,
+                "hideContentOnHtml": false,
+                "hideContentOnMobile": false
+              },
+              "paragraph": {
+                "computedStyle": {
+                  "linkColor": "#FF819C"
+                },
+                "html": "<p style=\"word-break:break-word;\"><span><strong><span>Fusce Nullam Consectetur</span></strong></span></p>",
+                "style": {
+                  "color": "#61626F",
+                  "font-family": "'Montserrat','Trebuchet MS','Lucida Grande','Lucida Sans Unicode','Lucida Sans',Tahoma,sans-serif",
+                  "font-size": "38px",
+                  "line-height": "120%",
+                  "text-align": "center"
+                }
+              },
+              "style": {
+                "padding-bottom": "10px",
+                "padding-left": "10px",
+                "padding-right": "10px",
+                "padding-top": "15px"
+              }
+            },
+            "locked": false,
+            "type": "mailup-bee-newsletter-modules-paragraph",
+            "uuid": "a4bb5996-6ff9-456a-bc4a-7d4e7718b2dd"
+          },
+          {
+            "descriptor": {
+              "computedStyle": {
+                "hideContentOnAmp": false,
+                "hideContentOnDesktop": false,
+                "hideContentOnHtml": false,
+                "hideContentOnMobile": false
+              },
+              "paragraph": {
+                "computedStyle": {
+                  "linkColor": "#FF819C"
+                },
+                "html": "<p style=\"word-break:break-word;\"><span>Vestibulum id ligula porta felis euismod semper. Nulla vitae elit.</span></p>",
+                "style": {
+                  "color": "#9D9DA1",
+                  "font-family": "'Montserrat','Trebuchet MS','Lucida Grande','Lucida Sans Unicode','Lucida Sans',Tahoma,sans-serif",
+                  "font-size": "16px",
+                  "line-height": "120%",
+                  "text-align": "center"
+                }
+              },
+              "style": {
+                "padding-bottom": "10px",
+                "padding-left": "10px",
+                "padding-right": "10px",
+                "padding-top": "0px"
+              }
+            },
+            "locked": false,
+            "type": "mailup-bee-newsletter-modules-paragraph",
+            "uuid": "3e771bc1-fbe0-4260-8117-a80463e91026"
+          },
+          {
+            "descriptor": {
+              "button": {
+                "label": "<div class=\"txtTinyMce-wrapper\" style=\"\" data-mce-style=\"\"><p style=\"word-break:break-word;\" data-mce-style=\"word-break:break-word;\"><span style=\"\" data-mce-style=\"\">SHOW MORE</span></p></div>",
+                "style": {
+                  "background-color": "#FF819C",
+                  "border-bottom": "0px solid transparent",
+                  "border-left": "0px solid transparent",
+                  "border-radius": "25px",
+                  "border-right": "0px solid transparent",
+                  "border-top": "0px solid transparent",
+                  "color": "#ffffff",
+                  "direction": "ltr",
+                  "font-family": "'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif",
+                  "font-size": "18px",
+                  "line-height": "200%",
+                  "max-width": "100%",
+                  "padding-bottom": "5px",
+                  "padding-left": "20px",
+                  "padding-right": "20px",
+                  "padding-top": "5px",
+                  "width": "35%"
+                },
+                "target": "_self"
+              },
+              "computedStyle": {
+                "height": 46,
+                "width": 195
+              },
+              "style": {
+                "padding-bottom": "25px",
+                "padding-left": "10px",
+                "padding-right": "10px",
+                "padding-top": "15px",
+                "text-align": "center"
+              }
+            },
+            "locked": false,
+            "type": "mailup-bee-newsletter-modules-button",
+            "uuid": "ff804bf0-37c8-4da6-9313-713d15c68f3b"
+          },
+          {
+            "descriptor": {
+              "computedStyle": {
+                "align": "center"
+              },
+              "divider": {
+                "style": {
+                  "border-top": "5px solid transparent",
+                  "height": "0px",
+                  "width": "100%"
+                }
+              },
+              "style": {
+                "padding-bottom": "30px",
+                "padding-left": "30px",
+                "padding-right": "30px",
+                "padding-top": "30px"
+              }
+            },
+            "locked": false,
+            "type": "mailup-bee-newsletter-modules-divider",
+            "uuid": "08d32399-fb42-4b6a-873c-6cd8eff8b20a"
+          }
+        ],
+        "style": {
+          "background-color": "transparent",
+          "border-bottom": "0px solid transparent",
+          "border-left": "0px solid transparent",
+          "border-right": "0px solid transparent",
+          "border-top": "0px solid transparent",
+          "padding-bottom": "5px",
+          "padding-left": "0px",
+          "padding-right": "0px",
+          "padding-top": "5px"
+        },
+        "uuid": "11bfa808-3535-4990-bb1d-004c361c2377"
+      }
+    ],
+    "container": {
+      "style": {
+        "background-color": "transparent",
+        "background-image": "none",
+        "background-position": "top left",
+        "background-repeat": "no-repeat"
+      }
+    },
+    "content": {
+      "computedStyle": {
+        "hideContentOnDesktop": false,
+        "hideContentOnMobile": false,
+        "rowColStackOnMobile": true,
+        "rowReverseColStackOnMobile": false,
+        "verticalAlign": "top"
+      },
+      "style": {
+        "background-color": "transparent",
+        "background-image": "none",
+        "background-position": "top left",
+        "background-repeat": "no-repeat",
+        "color": "#000000",
+        "width": "675px"
+      }
+    },
+    "empty": false,
+    "locked": false,
+    "synced": false,
+    "type": "one-column-empty",
+    "uuid": "1f50c079-5a40-433e-965a-436c7fbc5128",
+    "metadata": {
+      "name": "Call to action",
+      "category": "footers",
+      "id": "footer-01"
+    }
+  },
+  {
+    "columns": [
+      {
+        "grid-columns": 12,
+        "modules": [
+          {
+            "descriptor": {
+              "computedStyle": {
+                "height": 57,
+                "iconsDefaultWidth": 32,
+                "padding": "0 5px 5px 0",
+                "width": 151
+              },
+              "iconsList": {
+                "icons": [
+                  {
+                    "image": {
+                      "alt": "Facebook",
+                      "href": "https://www.facebook.com",
+                      "prefix": "https://www.facebook.com",
+                      "src": "https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-outline-circle-color/facebook.png",
+                      "target": "_self",
+                      "title": "Facebook"
+                    },
+                    "name": "facebook",
+                    "text": "",
+                    "type": "follow"
+                  },
+                  {
+                    "image": {
+                      "alt": "Twitter",
+                      "href": "https://www.twitter.com",
+                      "prefix": "https://www.twitter.com",
+                      "src": "https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-outline-circle-color/twitter.png",
+                      "target": "_self",
+                      "title": "Twitter"
+                    },
+                    "name": "twitter",
+                    "text": "",
+                    "type": "follow"
+                  },
+                  {
+                    "image": {
+                      "alt": "Instagram",
+                      "href": "https://www.instagram.com",
+                      "prefix": "https://www.instagram.com",
+                      "src": "https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-outline-circle-color/instagram@2x.png",
+                      "target": "_self",
+                      "title": "Instagram"
+                    },
+                    "name": "instagram",
+                    "text": "",
+                    "type": "follow"
+                  }
+                ]
+              },
+              "style": {
+                "padding-bottom": "10px",
+                "padding-left": "10px",
+                "padding-right": "10px",
+                "padding-top": "10px",
+                "text-align": "center"
+              }
+            },
+            "locked": false,
+            "type": "mailup-bee-newsletter-modules-social",
+            "uuid": "da7278bf-74d8-42a0-bc17-2e7723884332"
+          },
+          {
+            "descriptor": {
+              "computedStyle": {
+                "hideContentOnAmp": false,
+                "hideContentOnDesktop": false,
+                "hideContentOnHtml": false,
+                "hideContentOnMobile": false
+              },
+              "paragraph": {
+                "computedStyle": {
+                  "linkColor": "#FF819C"
+                },
+                "html": "<p style=\"word-break:break-word;\">Your Company © All rights reserved</p>",
+                "style": {
+                  "color": "#959595",
+                  "font-family": "'Montserrat','Trebuchet MS','Lucida Grande','Lucida Sans Unicode','Lucida Sans',Tahoma,sans-serif",
+                  "font-size": "14px",
+                  "line-height": "150%",
+                  "text-align": "center"
+                }
+              },
+              "style": {
+                "padding-bottom": "10px",
+                "padding-left": "10px",
+                "padding-right": "10px",
+                "padding-top": "15px"
+              }
+            },
+            "locked": false,
+            "type": "mailup-bee-newsletter-modules-paragraph",
+            "uuid": "c4df1302-ec31-4fd4-b943-8fee85a54588"
+          }
+        ],
+        "style": {
+          "background-color": "transparent",
+          "border-bottom": "0px solid transparent",
+          "border-left": "0px solid transparent",
+          "border-right": "0px solid transparent",
+          "border-top": "0px solid transparent",
+          "padding-bottom": "30px",
+          "padding-left": "0px",
+          "padding-right": "0px",
+          "padding-top": "30px"
+        },
+        "uuid": "14dab247-72b7-4fd2-b2e5-c3bdbc984a08"
+      }
+    ],
+    "container": {
+      "style": {
+        "background-color": "#FFF3F0",
+        "background-image": "none",
+        "background-position": "top left",
+        "background-repeat": "no-repeat"
+      }
+    },
+    "content": {
+      "computedStyle": {
+        "hideContentOnDesktop": false,
+        "hideContentOnMobile": false,
+        "rowColStackOnMobile": true,
+        "rowReverseColStackOnMobile": false,
+        "verticalAlign": "top"
+      },
+      "style": {
+        "background-color": "transparent",
+        "background-image": "none",
+        "background-position": "top left",
+        "background-repeat": "no-repeat",
+        "color": "#333",
+        "width": "675px"
+      }
+    },
+    "empty": false,
+    "locked": false,
+    "synced": false,
+    "type": "one-column-empty",
+    "uuid": "fe3aa935-3660-4822-858a-c79a8726f659",
+    "metadata": {
+      "name": "Social links and legal text",
+      "category": "footers",
+      "id": "footer-02"
+    }
+  }
+]

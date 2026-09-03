@@ -1,0 +1,31 @@
+/* Example 1: rounded tabs. Shows what themes cannot do: change the shape of the sidebar tab strip.
+   Serve it from your own HTTPS origin and point beeConfig.customCss at it.
+
+   Rules from https://docs.beefree.io/beefree-sdk/other-customizations/appearance/custom-css:
+   only --cs class hooks, every rule scoped under body.bee--cs, nothing on the stage.
+   Classes observed in builder 3.55.1 (Email) on 2026-09-03, see references/selectors.md.
+   The violet is illustrative: replace the color values with your palette. */
+
+/* The strip that holds the tab buttons becomes a light violet pill */
+body.bee--cs .tabs__tablabels--cs {
+  padding: 6px;
+  gap: 4px;
+  border-radius: 999px;
+  background-color: #f5f3ff;
+}
+
+/* Each tab is a white pill with a 2px violet border, drawn as an inset shadow so nothing moves.
+   The builder keeps its own active marker: the active tab has no --cs class. */
+body.bee--cs .tabs__tablabel--cs {
+  border-radius: 999px;
+  padding-left: 14px;
+  padding-right: 14px;
+  background-color: #ffffff;
+  box-shadow: inset 0 0 0 2px #7c3aed;
+}
+
+/* Keyboard users get a visible ring that follows the pill shape */
+body.bee--cs .tabs__tablabel--cs:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+}

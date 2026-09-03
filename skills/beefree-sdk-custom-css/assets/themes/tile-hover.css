@@ -1,0 +1,38 @@
+/* Example 2: tile hover. Shows what themes cannot do: motion and a highlight when a content tile is hovered.
+   Serve it from your own HTTPS origin and point beeConfig.customCss at it.
+
+   Rules from https://docs.beefree.io/beefree-sdk/other-customizations/appearance/custom-css:
+   only --cs class hooks, every rule scoped under body.bee--cs, nothing on the stage.
+   :hover sits on a --cs class, it is not an extra hook. The label is the --cs class inside the tile.
+   Classes observed in builder 3.55.1 (Email) on 2026-09-03, see references/selectors.md.
+   The violet is illustrative: replace the three color values with your palette. */
+
+body.bee--cs .sidebar-draggable--cs {
+  transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
+}
+
+/* Lift and grow, 2px violet inset border, light violet background, violet tinted shadow */
+body.bee--cs .sidebar-draggable--cs:hover {
+  transform: translateY(-4px) scale(1.03);
+  background-color: #f5f3ff;
+  box-shadow:
+    inset 0 0 0 2px #7c3aed,
+    0 8px 20px rgba(124, 58, 237, 0.25);
+}
+
+/* Label in violet and semibold */
+body.bee--cs .sidebar-draggable--cs:hover .body__title--cs {
+  color: #7c3aed;
+  font-weight: 600;
+}
+
+/* Users who asked their system for less motion get the highlight without the movement */
+@media (prefers-reduced-motion: reduce) {
+  body.bee--cs .sidebar-draggable--cs {
+    transition: none;
+  }
+
+  body.bee--cs .sidebar-draggable--cs:hover {
+    transform: none;
+  }
+}

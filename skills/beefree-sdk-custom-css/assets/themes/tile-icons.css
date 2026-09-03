@@ -1,0 +1,43 @@
+/* Example 3: your own tile icons. Shows what themes cannot do: replace the artwork of the content tiles.
+   Ship the icons/ folder next to this file and serve both from your own HTTPS origin.
+
+   How it works, observed in builder 3.55.1 (Email) on 2026-09-03:
+   each tile carries a class per content type (.sidebar-draggable-heading--cs and so on) and holds one
+   inline <svg> of 36x36 pixels. The rule makes the svg drawing transparent and paints your icon as the
+   svg's own background, so the layout does not move. One rule per tile; tiles without a rule keep
+   their default icon. Relative url() values resolve against this file's URL.
+
+   Rules from https://docs.beefree.io/beefree-sdk/other-customizations/appearance/custom-css:
+   the hook is the --cs class, "svg" under it is a plain tag as in the docs' own snippet, no chains.
+   Icon color is inside each SVG file (stroke="#7c3aed"): edit the files to match your palette.
+   The svg box also gets a light violet rounded backdrop so the icon stands out on the tile. */
+
+body.bee--cs .sidebar-draggable-heading--cs svg,
+body.bee--cs .sidebar-draggable-paragraph--cs svg,
+body.bee--cs .sidebar-draggable-list--cs svg,
+body.bee--cs .sidebar-draggable-image--cs svg,
+body.bee--cs .sidebar-draggable-button--cs svg,
+body.bee--cs .sidebar-draggable-divider--cs svg,
+body.bee--cs .sidebar-draggable-spacer--cs svg,
+body.bee--cs .sidebar-draggable-social--cs svg,
+body.bee--cs .sidebar-draggable-icons--cs svg {
+  fill: transparent;
+  color: transparent;
+  background-color: #f5f3ff;
+  border-radius: 8px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 26px 26px;
+}
+
+body.bee--cs .sidebar-draggable-heading--cs svg   { background-image: url(./icons/heading.svg); }
+body.bee--cs .sidebar-draggable-paragraph--cs svg { background-image: url(./icons/paragraph.svg); }
+body.bee--cs .sidebar-draggable-list--cs svg      { background-image: url(./icons/list.svg); }
+body.bee--cs .sidebar-draggable-image--cs svg     { background-image: url(./icons/image.svg); }
+body.bee--cs .sidebar-draggable-button--cs svg    { background-image: url(./icons/button.svg); }
+body.bee--cs .sidebar-draggable-divider--cs svg   { background-image: url(./icons/divider.svg); }
+body.bee--cs .sidebar-draggable-spacer--cs svg    { background-image: url(./icons/spacer.svg); }
+body.bee--cs .sidebar-draggable-social--cs svg    { background-image: url(./icons/social.svg); }
+body.bee--cs .sidebar-draggable-icons--cs svg     { background-image: url(./icons/icons.svg); }
+
+/* To cover another tile: inspect it, read its sidebar-draggable-<name>--cs class, add a rule and an SVG. */
