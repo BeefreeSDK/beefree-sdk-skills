@@ -73,7 +73,7 @@ await bee.start(beeConfig, templateJson)
 
 `create` and `start` can be separated.
 Create early, start when the template is available.
-A File Manager application calls `start()` with no template.
+A File Manager application calls `start()` with no template, see [file-manager.md](file-manager.md).
 
 ## Instance methods used in the setup phase
 

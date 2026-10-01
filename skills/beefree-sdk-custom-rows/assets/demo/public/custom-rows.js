@@ -1,6 +1,6 @@
 // Pre-built rows (Custom Rows) for the Beefree SDK demo page.
 // Adds two lists to the Rows tab drop-down, "Headers" and "Footers", served as static JSON from public/rows/.
-// Requires: server.js sends Access-Control-Allow-Origin on the files under /rows/ (see SKILL.md, Step 6A).
+// Requires: server.js sends Access-Control-Allow-Origin on the files resolved under public/rows/ (see SKILL.md, Step 6A).
 // Load this file before app.js, then:
 //   BeePlugin.create(token, withCustomRows(beeConfig), ...)
 

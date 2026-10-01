@@ -1,18 +1,19 @@
 ---
 name: beefree-sdk-setup
 license: MIT
-description: Set up Beefree SDK (the embeddable email, page and popup builder) in a project, from an empty folder to a running local demo or into an existing web app. Covers loginV2 authorization, the token endpoint, loading the builder, the minimal beeConfig, the save round trip, and which plan the credentials are on. Use when the user mentions Beefree SDK, @beefree.io/sdk, BeePlugin, loginV2, client_id and client_secret for Beefree, wants to embed a drag-and-drop email builder, or asks whether a Beefree SDK feature is in their plan.
+description: Set up Beefree SDK (the embeddable email, page and popup builder) in a project, from an empty folder to a running local demo or into an existing web app. Covers loginV2 authorization, the token endpoint, loading the builder, the minimal beeConfig, the save round trip, the standalone File Manager application, and which plan the credentials are on. Use when the user mentions Beefree SDK, @beefree.io/sdk, BeePlugin, loginV2, client_id and client_secret for Beefree, wants to embed a drag-and-drop email builder or the Beefree File Manager, or asks whether a Beefree SDK feature is in their plan.
 compatibility: Needs bash, curl and Node.js 20.6 or newer for the credentials check and the local demo. jq is optional.
 metadata:
   author: Beefree SDK
-  version: "0.2.3"
-  last-verified: "2026-09-03"
+  version: "0.3.1"
+  last-verified: "2026-10-01"
   docs: https://docs.beefree.io/beefree-sdk
 ---
 
 # Beefree SDK setup
 
 Get a developer from Beefree SDK credentials to a builder that renders in the browser and returns JSON plus HTML on save.
+With File Manager credentials, the goal is a File Manager where uploaded files are still there after a reload.
 The skill is framework-neutral.
 Framework-specific integration (React, Vue, Angular) is out of scope here.
 
@@ -27,9 +28,13 @@ Confirm these before writing code.
 2. The application's **Client ID** and **Client Secret**.
    They are on the application details page of the Developer Console (<https://developers.beefree.io/apps/>).
 3. The application type.
-   Credentials are bound to one builder type: Email Builder, Page Builder, Popup Builder or File Manager.
-   This skill assumes **Email Builder**.
-   Ask the user to check the type in the console if they are not sure.
+   Credentials are bound to one application type: Email Builder, Page Builder, Popup Builder or File Manager.
+   This skill covers **Email Builder** and **File Manager**.
+   Page Builder and Popup Builder are not covered yet: say so, and point to <https://docs.beefree.io/beefree-sdk>.
+   The type is read from the token by `scripts/check-credentials.sh`, so there is no need to ask it up front.
+   When the type is not the one the user wants, say which type the credentials are for and that they need the credentials of an application of the wanted type.
+   That is a new application in the Developer Console, created by the user.
+   Never suggest a development (child) application for this: it always has the same type as its parent.
 4. Node.js 20.6 or newer for the local demo (`node --env-file` is used).
    An existing app keeps its own runtime.
 
@@ -80,14 +85,20 @@ Copy them instead of rewriting them.
 4. Run `scripts/check-credentials.sh .env` from this skill before starting the server.
    It validates the credentials and prints the plan and the application type read from the token, never the secret.
    Report both to the user, see [Plan check](#plan-check).
+   If the type is not the one the user asked for (for example Email Builder credentials for a File Manager), stop here, see prerequisite 3.
 5. Start: `npm start` (runs `node --env-file=.env server.js`).
    Option A can also open `public/index.html` straight from the file system, no server needed.
 6. Open <http://localhost:3000>.
+   With File Manager credentials the page reads the type from the token and opens `file-manager.html` on its own.
 
 The demo has no npm dependencies.
 It loads the builder with the Beefree loader script and fetches a sample template at run time.
 The default is `m-bee`; open `index.html?template=<name>` to start with another one, see [Sample templates](references/config-and-callbacks.md#sample-templates) for the names.
 Do not ask the user which template to use: the sample is a stand-in for their own JSON.
+A File Manager takes no template.
+It stores files in Beefree SDK storage by default.
+Tell the user they can switch to an existing application's storage, their own AWS S3 bucket or, on paid plans, their own file system in the Developer Console; the demo needs no change for that.
+See [file-manager.md](references/file-manager.md#storage).
 See [loading-options.md](references/loading-options.md) for why the demo does not use the npm package.
 
 ## Step 2B: existing app
@@ -109,6 +120,15 @@ Stay framework-neutral: describe what to add, then adapt to the stack you find i
    Other sample names (`newsletter`, `one-column`, `promo`, `base-*`) are listed in [config-and-callbacks.md](references/config-and-callbacks.md#sample-templates).
 6. **Check the plan** with `scripts/check-credentials.sh` once the credentials are in place, see [Plan check](#plan-check).
 
+**File Manager application.**
+The token endpoint and the loading are the same.
+What changes, details in [file-manager.md](references/file-manager.md):
+
+- `start()` with no template: `instance.start()` with the loader script, `bee.startFileManager(beeConfig)` with the npm package.
+- No `onSave`: there is no design to save. Keep `onError` and the token refresh.
+- Add `onFilePickerInsert` and `onFilePickerCancel` only when the app opens the File Manager to pick a file; each one adds a button (Insert, X).
+- Storage is set per application in the Developer Console, not in `beeConfig`. Beefree SDK storage is the default.
+
 ## Plan check
 
 Beefree SDK features are gated by plan: Free, Essentials, Core, Superpowers, Enterprise.
@@ -126,7 +146,7 @@ Check the plan before proposing or configuring any feature beyond the basic buil
    The table lists only the features these skills touch; for any other feature read the pricing page linked at the top of that file.
    If the plan includes it, go ahead.
    If not, say so and offer the two paths:
-   - **Test it in a development application.** On paid plans the user can create a development (child) application in the Developer Console, open its details and click **CHANGE PLAN** to a higher plan for testing.
+   - **Test it in a development application.** On paid plans the user can create a development (child) application, of the same type as its parent, in the Developer Console, open its details and click **CHANGE PLAN** to a higher plan for testing.
      This is free of charge, does not change the production subscription, and features tested this way cannot ship to production without the matching plan.
    - **Upgrade** the production application.
    On Free there is no development application, so only the upgrade applies.
@@ -162,12 +182,20 @@ Builder, full details in [config-and-callbacks.md](references/config-and-callbac
 The round trip is the acceptance test.
 Run through it with the user.
 
+Email Builder:
+
 1. The page loads with no console error and the builder renders inside the container with the sample template.
 2. Click **Save** in the page toolbar.
 3. The JSON and the HTML panels fill up, and the HTML preview shows the rendered email.
 
+File Manager:
+
+1. <http://localhost:3000> moves to `file-manager.html`, and the status line says the File Manager is ready.
+2. Upload an image.
+3. Reload the page: the image is still there, because files belong to the `uid`.
+
 If any step fails, use [troubleshooting.md](references/troubleshooting.md).
-The most common causes are wrong credentials (HTTP 401, code 5002), credentials of a Page, Popup or File Manager application used with the Email demo, a container without height, and a feature outside the plan.
+The most common causes are wrong credentials (HTTP 401, code 5002), credentials of a Page or Popup application, a container without height, and a feature outside the plan.
 
 ## Security rules
 
@@ -181,6 +209,7 @@ The most common causes are wrong credentials (HTTP 401, code 5002), credentials 
 - [auth.md](references/auth.md): authorization call, uid rules, token lifetime, error codes.
 - [plans.md](references/plans.md): plans, availability of the features these skills touch, development applications for testing higher plans.
 - [config-and-callbacks.md](references/config-and-callbacks.md): minimal config, callbacks, instance methods.
+- [file-manager.md](references/file-manager.md): File Manager application, picker callbacks, storage options, upload limits.
 - [loading-options.md](references/loading-options.md): loader script versus npm package.
 - [troubleshooting.md](references/troubleshooting.md): symptoms and fixes.
 - Official docs: <https://docs.beefree.io/beefree-sdk>.

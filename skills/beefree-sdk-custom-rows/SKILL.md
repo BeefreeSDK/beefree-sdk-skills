@@ -4,7 +4,7 @@ license: MIT
 description: Add pre-built rows (Custom Rows) to the Rows tab of the Beefree SDK builder with the rowsConfiguration config key (Core plan and above). The host app serves lists of ready-made rows such as headers, footers or product blocks from its own URLs, next to the built-in default and empty rows. Use when the user mentions custom rows, pre-built, pre-set or ready-made rows, a row catalog or library, rowsConfiguration, externalContentURLs, defaultRows, emptyRows or selectedRowType for Beefree SDK. Not for letting end users save their own rows, which beefree-sdk-self-hosted-saved-rows covers.
 metadata:
   author: Beefree SDK
-  version: "0.1.3"
+  version: "0.1.4"
   last-verified: "2026-09-03"
   docs: https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/pre-build
 ---
@@ -70,7 +70,7 @@ Each list is a URL that returns a JSON array of rows.
 
 The frame that fetches your lists comes from Beefree's servers.
 Browsers now stop pages from the internet from reading files on your computer, and `localhost` counts as your computer.
-So a list at `http://localhost:3000/rows/headers.json` will not load in Chrome.
+So a list at `http://localhost:3000/rows/headers.json` will not load in Chrome 142 or newer, nor in Firefox 153 or newer.
 The drop-down still shows the list names, because those come from the config, but the list stays empty and the only sign is a "blocked by CORS policy" line in the browser console.
 Details and sources in [rows-configuration.md](references/rows-configuration.md).
 
@@ -82,7 +82,8 @@ Do not pick for them when it is open.
   Put the list files on an HTTPS address you own and use those URLs in `externalContentURLs`.
   This is what production needs anyway.
 - **Quick local look.**
-  Keep `localhost` and open the demo in Firefox or Safari, which do not apply this rule as of September 2026.
+  Keep `localhost` and open the demo in Safari, the one browser with no Local Network Access implementation found as of September 2026 (inferred from the browser docs, not tested).
+  Firefox 153 and later apply the rule too.
 - **Last resort, Chrome only.**
   Set `chrome://flags/#local-network-access-check` to Disabled while testing, if your Chrome still has that flag.
   This lowers a browser protection for every site you visit: turn it back on as soon as the test is done.
@@ -109,7 +110,7 @@ Facts, details in [rows-configuration.md](references/rows-configuration.md):
 
 - `name` is the label in the drop-down and the handle `selectedRowType` refers to.
 - Key order in the object is the drop-down order; the first item is selected unless `selectedRowType` says otherwise.
-- `emptyRows` and `defaultRows` are optional. Leave both out to limit end users to the host's rows.
+- `defaultRows` defaults to `false` and can stay out. `emptyRows` defaults to `true` and is appended last when omitted: set `emptyRows: false` to limit end users to the host's rows.
 - Each custom list shows 30 cards; the search box covers all of them. `maxRowsDisplayed` raises the limit.
 - The value is read when the builder is created. For lists that depend on a search or a click in the host UI, add the `contentDialog.externalContentURLs` handler, see the reference.
 
@@ -123,12 +124,13 @@ Two lists of two rows each, cut from the sample template the demo already loads.
 
    ```javascript
    const headers = { 'Content-Type': MIME[path.extname(filePath)] || 'application/octet-stream' }
-   if (url.pathname.startsWith('/rows/')) headers['Access-Control-Allow-Origin'] = '*'
+   if (path.relative(PUBLIC_DIR, filePath).startsWith('rows' + path.sep)) headers['Access-Control-Allow-Origin'] = '*'
    res.writeHead(200, headers)
    ```
 
    Keep the header off the other files.
    In client-side auth mode `public/auth.js` holds the Client Secret, and a CORS header on it would let any website read it.
+   Decide on `filePath`, the resolved path, never on `url.pathname`: an encoded `/rows/..%2fauth.js` starts with `/rows/` but resolves to `public/auth.js`.
 3. Load the script in `public/index.html`, before `app.js`:
 
    ```html
@@ -172,7 +174,7 @@ Stay framework-neutral.
 | Symptom                                             | Likely cause and fix                                                                                              |
 | --------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
 | Drop-down shows only Empty and Default              | Plan below Core (Step 1), or `rowsConfiguration` not in the config passed at creation.                             |
-| List present, no cards, console says "blocked by CORS policy: Permission was denied for this request to access the `loopback` address space" | The `localhost` limit from Step 4. Host the lists on HTTPS, or open the demo in Firefox or Safari.                          |
+| List present, no cards, console says "blocked by CORS policy: Permission was denied for this request to access the `loopback` address space" | The `localhost` limit from Step 4. Host the lists on HTTPS, or open the demo in Safari.                          |
 | List present, no cards, console shows another CORS error | The `Access-Control-Allow-Origin` header is missing on the rows URL (Step 6A edit 2).                            |
 | List present, no cards, no console error            | URL 404 or body not a JSON array. Open the URL in a tab and check.                                                 |
 | List present, no cards, page is `https://`          | Mixed content: the rows URL is `http://`. Serve it over HTTPS.                                                     |

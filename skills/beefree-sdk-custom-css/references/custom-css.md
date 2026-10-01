@@ -42,15 +42,17 @@ Access to CSS stylesheet at 'http://localhost:3000/custom.css' from origin 'http
 What works:
 
 - A stylesheet on a public HTTPS origin, which is what production needs.
-- Firefox and Safari, which do not implement Local Network Access at the time of writing (inferred from MDN marking the policy experimental and the explainer naming only Chrome; not tested).
+- Safari, which has no Local Network Access implementation at the time of writing (inferred from MDN marking the policy experimental and the explainer naming only Chrome; not tested).
+  Firefox is not a way around it: Firefox 153 (2026-07-21) enables Local Network Access restrictions by default.
 - Last resort: Chrome with `chrome://flags/#local-network-access-check` set to Disabled, for testing only. It lowers a browser protection for every site, so turn it back on after the test. The flag name is from the Chrome blog; its presence in a given Chrome build is not guaranteed.
 
-The official `custom-css-example` builds the theme URL from `location.origin` and has the same problem in Chrome 142 or newer.
+The official `custom-css-example` builds the theme URL from `location.origin` and has the same problem in Chrome 142 or newer and Firefox 153 or newer.
 
 Sources, read on 2026-09-03:
 <https://developer.chrome.com/blog/local-network-access>,
 <https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/local-network-access>,
 <https://github.com/WICG/local-network-access/blob/main/explainer.md>.
+Firefox 153 release notes, read on 2026-09-06: <https://www.firefox.com/en-US/firefox/153.0/releasenotes/>.
 
 ## Rules from the docs, verbatim in substance
 

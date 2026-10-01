@@ -125,6 +125,11 @@ onError: function (error) {
 An application in the Developer Console is one of: Email Builder, Page Builder, Popup Builder, File Manager.
 Credentials belong to one application, so they belong to one type.
 `loginV2` accepts the credentials of every type; the token then starts the builder of that type.
-Credentials of a File Manager application start the File Manager, and `start()` is called without a template.
+Credentials of a File Manager application start the File Manager, and `start()` is called without a template, see [file-manager.md](file-manager.md).
 Development applications (paid plans) are child applications with their own credentials.
 Source: <https://docs.beefree.io/beefree-sdk/getting-started/readme/create-an-application>.
+
+A development application has the same type as its parent: an Email Builder application can only have Email Builder children, not a File Manager child.
+Confirmed in the Developer Console on 2026-10-01; the docs do not state it.
+So a development application is a way to test a higher plan, never a way to get another type.
+Credentials of the wrong type need a new application of the right type, created from the Developer Console application list.

@@ -33,7 +33,7 @@ Two paths.
 
 1. **Test it in a development application.**
    Development applications are child applications of a production application, available on paid plans.
-   They inherit the parent's plan.
+   They inherit the parent's plan and the parent's application type, so they cannot provide another type.
    To test features of a higher plan, open the development application details in the Developer Console and click **CHANGE PLAN** in the upper right.
    This is free of charge and does not change the subscription of the production application.
    The Custom CSS docs page states this "at no extra charge"; usage on the development application still counts toward usage-based fees and limits.

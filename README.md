@@ -14,7 +14,7 @@ Sign up at <https://developers.beefree.io/signup?from=skill>.
 
 | Skill                                        | Use it when                                                                                          |
 | -------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| [`beefree-sdk-setup`](skills/beefree-sdk-setup/SKILL.md) | You start from scratch or add Beefree SDK to an existing app: authorization, loading the builder, first save |
+| [`beefree-sdk-setup`](skills/beefree-sdk-setup/SKILL.md) | You start from scratch or add Beefree SDK to an existing app: authorization, loading the builder, first save; also a standalone File Manager |
 | [`beefree-sdk-custom-css`](skills/beefree-sdk-custom-css/SKILL.md) | You want to change the builder UI beyond what Themes offer (Superpowers plan and above): rounded tabs, a hover effect on the content tiles, your own tile icons, `customCss`, safe selectors |
 | [`beefree-sdk-self-hosted-saved-rows`](skills/beefree-sdk-self-hosted-saved-rows/SKILL.md) | You want end users to save rows into your own backend and reuse them (Core plan and above): console toggle, `saveRow` dialog, `onSaveRow`, `getRows`, rename and delete |
 | [`beefree-sdk-custom-rows`](skills/beefree-sdk-custom-rows/SKILL.md) | You want to offer ready-made rows (headers, footers, product blocks) in the Rows tab from your own URLs (Core plan and above): `rowsConfiguration`, `externalContentURLs`, `selectedRowType`, row metadata, CORS |
@@ -91,8 +91,12 @@ skills/<skill-name>/
 └── scripts/        # helper scripts, runtime-agnostic (bash, node)
 ```
 
-## Related repositories
+## Related resources
 
+- Documentation: <https://docs.beefree.io/beefree-sdk>
+- Developer Console: <https://developers.beefree.io/apps/>
+- Agent Skills format: <https://agentskills.io/specification>
+- `skills` CLI: <https://github.com/vercel-labs/skills>
 - Documentation source: <https://github.com/BeefreeSDK/beefree-sdk-docs>
 - npm package: <https://github.com/BeefreeSDK/beefree-sdk-npm-official>
 - Examples: <https://github.com/BeefreeSDK/beefree-sdk-examples>

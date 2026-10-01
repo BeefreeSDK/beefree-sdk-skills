@@ -4,7 +4,7 @@ license: MIT
 description: Add self-hosted Saved Rows to a Beefree SDK integration (Core plan and above). End users click Save on a row, the host app stores the row JSON in its own backend and feeds it back through the Rows tab, with rename and delete. Use when the user mentions saved rows, reusable rows, save a row for later, saveRows, onSaveRow, getRows or the saveRow content dialog for Beefree SDK. Hosted Saved Rows is a console toggle, not this skill. Ready-made rows served by the host app are beefree-sdk-custom-rows.
 metadata:
   author: Beefree SDK
-  version: "0.1.2"
+  version: "0.1.3"
   last-verified: "2026-09-03"
   docs: https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/save/implement-self-hosted-saved-rows
 ---
@@ -138,6 +138,7 @@ Stay framework-neutral and port the two demo files.
 | No Save icon on rows                          | Console toggle off (Step 3), `saveRows` missing or `false`, or plan below Core.                 |
 | Save icon present, click does nothing         | `contentDialog.saveRow` missing. It is mandatory.                                              |
 | Dialog closes, row not stored                 | `onSaveRow` missing, or the POST failed. Check the server log.                                 |
+| Enter in the name dialog cancels              | Cancel is a submit button, so Enter presses it first. Give it `type="button"`, as `saved-rows.js` does. |
 | List is empty after saving                    | `getRows` rejected or resolved something that is not an array. `isLocal: true` and `handle` must both be set. |
 | Rename or delete menu missing                 | `behaviors.canEdit` / `canDelete` not `true` on that list entry.                               |
 | Rows appear only after a search               | The panel shows 30 rows per list by default. Raise `maxRowsDisplayed`.                          |

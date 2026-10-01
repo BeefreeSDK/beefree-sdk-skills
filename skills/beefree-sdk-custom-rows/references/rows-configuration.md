@@ -98,13 +98,15 @@ What works:
 
 - Lists on a public HTTPS origin, which is what production needs.
 - The `getRows` hook with `isLocal: true` on the list entry: the handler runs in the host page, so the page fetches the rows from its own origin. This is the path of the `beefree-sdk-self-hosted-saved-rows` skill, not the URL path this skill teaches.
-- Firefox and Safari, which do not implement Local Network Access at the time of writing (inferred from MDN marking the policy experimental and the explainer naming only Chrome; not tested).
+- Safari, which has no Local Network Access implementation at the time of writing (inferred from MDN marking the policy experimental and the explainer naming only Chrome; not tested).
+  Firefox is not a way around it: Firefox 153 (2026-07-21) enables Local Network Access restrictions by default.
 - Last resort: Chrome with `chrome://flags/#local-network-access-check` set to Disabled, for testing only. It lowers a browser protection for every site, so turn it back on after the test. The flag name is from the Chrome blog; its presence in a given Chrome build is not guaranteed.
 
 Sources, read on 2026-09-03:
 <https://developer.chrome.com/blog/local-network-access>,
 <https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/local-network-access>,
 <https://github.com/WICG/local-network-access/blob/main/explainer.md>.
+Firefox 153 release notes, read on 2026-09-06: <https://www.firefox.com/en-US/firefox/153.0/releasenotes/>.
 
 ## Row metadata
 
@@ -125,7 +127,7 @@ Metadata is not rendered. Extra fields are allowed.
 - The drop-down lists row types in the order the keys appear in `rowsConfiguration`: write `defaultRows` before `emptyRows` to show Default first.
   Custom lists follow in their array order.
 - The first item is selected when the Rows tab opens for the first time, unless `selectedRowType` says otherwise.
-- `emptyRows` and `defaultRows` are optional. Custom lists alone are allowed, which limits end users to host-approved rows.
+- `defaultRows` defaults to `false` and can stay out. `emptyRows` defaults to `true` and is appended last when omitted; set `emptyRows: false` to show custom lists alone, which limits end users to host-approved rows.
 - No limit on rows per array, but the panel shows the first 30. The search box matches every row in the array, including hidden ones and image file names, and shows the first 30 matches. `maxRowsDisplayed` raises the 30.
 
 ## Dynamic lists through the content dialog

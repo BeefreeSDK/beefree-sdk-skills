@@ -7,19 +7,55 @@
 #
 # Usage:
 #   BEEFREE_CLIENT_ID=... BEEFREE_CLIENT_SECRET=... scripts/check-credentials.sh
-#   scripts/check-credentials.sh path/to/.env        # loads the two variables from a .env file
+#   scripts/check-credentials.sh path/to/.env        # reads the two variables from a .env file
 #   scripts/check-credentials.sh path/to/.env my-uid # custom uid (default: demo-user)
 #   scripts/check-credentials.sh my-uid              # custom uid, credentials from the environment
 #
+# The .env file is parsed, never sourced: only BEEFREE_CLIENT_ID and BEEFREE_CLIENT_SECRET are read,
+# with the rules of `node --env-file` (KEY=value, optional `export`, `#` comments, surrounding quotes
+# stripped, no expansion, CRLF tolerated, last occurrence wins). Other lines are ignored, so a real
+# app's .env with spaces, dotted keys or `$` in values is safe. One difference from node: a value in
+# the file replaces one already in the environment, because the file was asked for explicitly.
+#
 # Exit codes: 0 credentials accepted, 1 rejected by Beefree, 2 usage error.
 set -euo pipefail
+
+# read_env_key FILE KEY: prints the value of KEY parsed from FILE, returns 1 when absent.
+read_env_key() {
+  local file="$1" key="$2" line k v q found=1 value=""
+  while IFS= read -r line || [[ -n "$line" ]]; do
+    line="${line%$'\r'}"
+    line="${line#"${line%%[![:space:]]*}"}"
+    [[ -z "$line" || "$line" == \#* ]] && continue
+    [[ "$line" == export\ * ]] && line="${line#export }"
+    [[ "$line" == *=* ]] || continue
+    k="${line%%=*}"
+    k="${k%"${k##*[![:space:]]}"}"
+    [[ "$k" == "$key" ]] || continue
+    v="${line#*=}"
+    v="${v#"${v%%[![:space:]]*}"}"
+    v="${v%"${v##*[![:space:]]}"}"
+    case "$v" in
+      \"*|\'*|\`*) q="${v:0:1}"; v="${v#?}"; v="${v%%"$q"*}" ;;  # quoted: up to the closing quote, rest of the line dropped
+      *) v="${v%%#*}"; v="${v%"${v##*[![:space:]]}"}" ;;        # unquoted: trailing comment dropped
+    esac
+    value="$v"; found=0
+  done < "$file"
+  [[ $found == 0 ]] && printf '%s' "$value"
+  return $found
+}
 
 DEFAULT_AUTH_URL="https://auth.getbee.io/loginV2"
 AUTH_URL="${BEEFREE_AUTH_URL:-$DEFAULT_AUTH_URL}"
 
 if [[ $# -ge 1 && -f "$1" ]]; then
-  # shellcheck disable=SC1090
-  set -a; source "$1"; set +a
+  if [[ ! -r "$1" ]]; then
+    echo "error: cannot read $1." >&2
+    exit 2
+  fi
+  if v="$(read_env_key "$1" BEEFREE_CLIENT_ID)"; then BEEFREE_CLIENT_ID="$v"; fi
+  if v="$(read_env_key "$1" BEEFREE_CLIENT_SECRET)"; then BEEFREE_CLIENT_SECRET="$v"; fi
+  unset v
   shift
 fi
 UID_VALUE="${1:-demo-user}"  # first non-file argument is the uid
@@ -143,7 +179,8 @@ if [[ -z "$HANDLE" ]]; then
 else
   echo "Application type: $TYPE (product_handle '$HANDLE')."
 fi
-if [[ "${HANDLE:-nl}" != "nl" ]]; then
-  echo "Note: the demo in assets/demo assumes an Email Builder application."
-fi
+case "${HANDLE:-nl}" in
+  nl|fm) ;;
+  *)     echo "Note: the demo in assets/demo covers Email Builder and File Manager applications only." ;;
+esac
 exit 0

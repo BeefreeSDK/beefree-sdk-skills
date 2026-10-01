@@ -88,12 +88,20 @@ async function handleToken(req, res) {
 
 function serveStatic(req, res) {
   const url = new URL(req.url, 'http://localhost')
-  let filePath = path.normalize(path.join(PUBLIC_DIR, decodeURIComponent(url.pathname)))
+  let pathname
+  try {
+    pathname = decodeURIComponent(url.pathname)
+  } catch {
+    // Malformed percent-encoding, for example /%. decodeURIComponent throws and must not kill the server.
+    res.writeHead(400)
+    return res.end()
+  }
+  let filePath = path.normalize(path.join(PUBLIC_DIR, pathname))
   if (filePath !== PUBLIC_DIR && !filePath.startsWith(PUBLIC_DIR + path.sep)) {
     res.writeHead(403)
     return res.end()
   }
-  if (url.pathname.endsWith('/')) filePath = path.join(filePath, 'index.html')
+  if (pathname.endsWith('/')) filePath = path.join(filePath, 'index.html')
   fs.readFile(filePath, (err, data) => {
     if (err) {
       res.writeHead(404, { 'Content-Type': 'text/plain' })

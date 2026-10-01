@@ -4,7 +4,7 @@ license: MIT
 description: Restyle the Beefree SDK builder UI with a custom stylesheet through the customCss config key (Superpowers plan and above), for what Themes in the Developer Console cannot do, such as rounded tabs, hover effects on the content tiles and your own tile icons, using only the stable --cs classes. Use when the user wants to theme, brand, restyle or change the look of the Beefree SDK builder, or mentions customCss or "custom CSS" for Beefree. Colors and fonts go to Themes first; hiding UI elements goes to Advanced Permissions.
 metadata:
   author: Beefree SDK
-  version: "0.2.4"
+  version: "0.2.5"
   last-verified: "2026-09-03"
   docs: https://docs.beefree.io/beefree-sdk/other-customizations/appearance/custom-css
 ---
@@ -55,7 +55,7 @@ Ask what the user wants to change.
 
 The builder is loaded inside a frame that comes from Beefree's servers, and that frame is what fetches your stylesheet.
 Browsers now stop pages from the internet from reading files on your computer, and `localhost` counts as your computer.
-So a stylesheet at `http://localhost:3000/custom.css` will not load in Chrome.
+So a stylesheet at `http://localhost:3000/custom.css` will not load in Chrome 142 or newer, nor in Firefox 153 or newer.
 Nothing breaks: the builder simply looks unchanged, and the only sign is a line in the browser console.
 Details and sources in [custom-css.md](references/custom-css.md).
 
@@ -67,7 +67,8 @@ Do not pick for them when it is open.
   Put the stylesheet on an HTTPS address you own and point `customCss` at it.
   This is what production needs anyway.
 - **Quick local look.**
-  Keep `localhost` and open the demo in Firefox or Safari, which do not apply this rule as of September 2026.
+  Keep `localhost` and open the demo in Safari, the one browser with no Local Network Access implementation found as of September 2026 (inferred from the browser docs, not tested).
+  Firefox 153 and later apply the rule too.
 - **Last resort, Chrome only.**
   Set `chrome://flags/#local-network-access-check` to Disabled while testing, if your Chrome still has that flag.
   This lowers a browser protection for every site you visit: turn it back on as soon as the test is done.

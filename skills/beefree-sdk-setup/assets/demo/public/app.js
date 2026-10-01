@@ -1,5 +1,6 @@
 // Loads a sample template, creates the Beefree SDK builder and wires the save round trip.
-// Requires: the BeePlugin loader script and auth.js (getBeefreeToken) loaded before this file.
+// Requires: the BeePlugin loader script, auth.js (getBeefreeToken) and token-claims.js loaded before this file.
+// File Manager credentials are sent to file-manager.html; Page and Popup credentials are not covered yet.
 
 // Sample template name, overridable from the page URL: index.html?template=promo
 // Known names: m-bee, newsletter, one-column, promo, plus base-* variants with placeholder images.
@@ -62,6 +63,18 @@ async function start() {
   try {
     setStatus('Requesting token…')
     const token = await getBeefreeToken(UID)
+
+    const handle = getApplicationHandle(token)
+    if (handle === 'fm') {
+      // file-manager.html requests its own token, so this redirect costs one extra loginV2 call.
+      // replace() keeps this page out of the history: Back does not bounce through the redirect.
+      location.replace('file-manager.html')
+      return
+    }
+    if (handle !== 'nl') {
+      setStatus('These credentials are for this application type: ' + getApplicationTypeName(handle) + '. This demo covers Email Builder and File Manager only.', true)
+      return
+    }
 
     setStatus('Loading sample template ' + TEMPLATE_NAME + '…')
     const templateRes = await fetch(TEMPLATE_URL)

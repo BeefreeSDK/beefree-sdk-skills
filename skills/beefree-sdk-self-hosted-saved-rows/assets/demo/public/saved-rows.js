@@ -16,6 +16,7 @@ async function rowsApi(method, suffix, body) {
 }
 
 // Native <dialog> asking for a row name. Resolves the trimmed name, or null when cancelled.
+// Cancel is not a submit button: Enter in the field presses the first submit button, which must be Save.
 function askRowName(current) {
   return new Promise(resolve => {
     const dialog = document.createElement('dialog')
@@ -23,10 +24,11 @@ function askRowName(current) {
       '<form method="dialog" style="display:grid;gap:12px;min-width:280px;font-family:system-ui,sans-serif">' +
       '<label>Row name<br><input name="name" required style="width:100%;padding:6px"></label>' +
       '<div style="display:flex;gap:8px;justify-content:flex-end">' +
-      '<button value="cancel" formnovalidate>Cancel</button>' +
+      '<button type="button" data-cancel>Cancel</button>' +
       '<button value="ok">Save</button></div></form>'
     const input = dialog.querySelector('input')
     input.value = current || ''
+    dialog.querySelector('[data-cancel]').addEventListener('click', () => dialog.close('cancel'))
     dialog.addEventListener('close', () => {
       const name = dialog.returnValue === 'ok' ? input.value.trim() : ''
       dialog.remove()

@@ -48,8 +48,24 @@ function readBody(req) {
 }
 
 async function handleRows(req, res) {
+  try {
+    await route(req, res)
+  } catch (err) {
+    // An unhandled rejection would terminate the server; report it instead.
+    console.error(`rows API error: ${err.message}`)
+    if (!res.headersSent) sendJson(res, 500, { error: 'rows API failed, see the server log' })
+    else res.end()
+  }
+}
+
+async function route(req, res) {
   const url = new URL(req.url, 'http://localhost')
-  const guid = decodeURIComponent(url.pathname.slice('/api/rows'.length).replace(/^\//, ''))
+  let guid
+  try {
+    guid = decodeURIComponent(url.pathname.slice('/api/rows'.length).replace(/^\//, ''))
+  } catch {
+    return sendJson(res, 400, { error: 'malformed percent-encoding in the URL' })
+  }
 
   if (req.method === 'GET' && !guid) return sendJson(res, 200, load())
 
