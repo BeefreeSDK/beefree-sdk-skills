@@ -1,10 +1,10 @@
 ---
 name: beefree-sdk-custom-css
-license: MIT
+license: Apache-2.0
 description: Restyle the Beefree SDK builder UI with a custom stylesheet through the customCss config key (Superpowers plan and above), for what Themes in the Developer Console cannot do, such as rounded tabs, hover effects on the content tiles and your own tile icons, using only the stable --cs classes. Use when the user wants to theme, brand, restyle or change the look of the Beefree SDK builder, or mentions customCss or "custom CSS" for Beefree. Colors and fonts go to Themes first; hiding UI elements goes to Advanced Permissions.
 metadata:
   author: Beefree SDK
-  version: "0.2.5"
+  version: "0.2.6"
   last-verified: "2026-09-03"
   docs: https://docs.beefree.io/beefree-sdk/other-customizations/appearance/custom-css
 ---

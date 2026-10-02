@@ -1,10 +1,10 @@
 ---
 name: beefree-sdk-content-dialog
-license: MIT
+license: Apache-2.0
 description: Add a Content Dialog to a Beefree SDK integration (Essentials plan and above) so end users pick merge tags, special links, dynamic content, display conditions, custom rows, attributes, videos or files through the host app's own UI instead of a fixed list. Covers the handler contract, the value shape of every handler and a search dialog for the setup demo. Use when the user mentions contentDialog, content dialog, a merge tag search, a product link picker, too many merge tags or special links for a list, a custom file picker, or wants their own modal inside the Beefree SDK builder. Saving rows, pre-built rows and display conditions have their own skills.
 metadata:
   author: Beefree SDK
-  version: "0.1.1"
+  version: "0.1.2"
   last-verified: "2026-09-03"
   docs: https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/content-dialog
 ---

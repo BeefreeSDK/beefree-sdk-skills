@@ -1,10 +1,10 @@
 ---
 name: beefree-sdk-custom-rows
-license: MIT
+license: Apache-2.0
 description: Add pre-built rows (Custom Rows) to the Rows tab of the Beefree SDK builder with the rowsConfiguration config key (Core plan and above). The host app serves lists of ready-made rows such as headers, footers or product blocks from its own URLs, next to the built-in default and empty rows. Use when the user mentions custom rows, pre-built, pre-set or ready-made rows, a row catalog or library, rowsConfiguration, externalContentURLs, defaultRows, emptyRows or selectedRowType for Beefree SDK. Not for letting end users save their own rows, which beefree-sdk-self-hosted-saved-rows covers.
 metadata:
   author: Beefree SDK
-  version: "0.1.4"
+  version: "0.1.5"
   last-verified: "2026-09-03"
   docs: https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/pre-build
 ---

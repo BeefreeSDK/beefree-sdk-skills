@@ -1,11 +1,11 @@
 ---
 name: beefree-sdk-setup
-license: MIT
+license: Apache-2.0
 description: Set up Beefree SDK (the embeddable email, page and popup builder) in a project, from an empty folder to a running local demo or into an existing web app. Covers loginV2 authorization, the token endpoint, loading the builder, the minimal beeConfig, the save round trip, the standalone File Manager application, and which plan the credentials are on. Use when the user mentions Beefree SDK, @beefree.io/sdk, BeePlugin, loginV2, client_id and client_secret for Beefree, wants to embed a drag-and-drop email builder or the Beefree File Manager, or asks whether a Beefree SDK feature is in their plan.
 compatibility: Needs bash, curl and Node.js 20.6 or newer for the credentials check and the local demo. jq is optional.
 metadata:
   author: Beefree SDK
-  version: "0.3.1"
+  version: "0.3.2"
   last-verified: "2026-10-01"
   docs: https://docs.beefree.io/beefree-sdk
 ---

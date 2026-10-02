@@ -1,10 +1,10 @@
 ---
 name: beefree-sdk-self-hosted-saved-rows
-license: MIT
+license: Apache-2.0
 description: Add self-hosted Saved Rows to a Beefree SDK integration (Core plan and above). End users click Save on a row, the host app stores the row JSON in its own backend and feeds it back through the Rows tab, with rename and delete. Use when the user mentions saved rows, reusable rows, save a row for later, saveRows, onSaveRow, getRows or the saveRow content dialog for Beefree SDK. Hosted Saved Rows is a console toggle, not this skill. Ready-made rows served by the host app are beefree-sdk-custom-rows.
 metadata:
   author: Beefree SDK
-  version: "0.1.3"
+  version: "0.1.4"
   last-verified: "2026-09-03"
   docs: https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/save/implement-self-hosted-saved-rows
 ---

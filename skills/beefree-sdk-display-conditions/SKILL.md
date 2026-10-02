@@ -1,10 +1,10 @@
 ---
 name: beefree-sdk-display-conditions
-license: MIT
+license: Apache-2.0
 description: Add Display Conditions to a Beefree SDK integration (Core plan and above) so end users show or hide a row per recipient with the host app's own templating syntax, such as Liquid or Handlebars. Covers the rowDisplayConditions array, before and after rules for multi-row logic, a condition builder dialog, roles and permissions. Use when the user mentions display conditions, conditional rows, rowDisplayConditions, show a row only to a segment, personalized or conditional content per recipient, if and endif around a row, or a condition builder for Beefree SDK. Merge tags and other content dialogs have their own skill.
 metadata:
   author: Beefree SDK
-  version: "0.1.2"
+  version: "0.1.3"
   last-verified: "2026-09-03"
   docs: https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/display-conditions
 ---
