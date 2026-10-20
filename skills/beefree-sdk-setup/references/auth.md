@@ -1,7 +1,7 @@
 # Authorization
 
-Source: <https://docs.beefree.io/beefree-sdk/getting-started/readme/installation/authorization-process-in-detail>
-and <https://docs.beefree.io/beefree-sdk/getting-started/readme/installation/how-the-uid-parameter-works>.
+Source: <https://docs.beefree.io/beefree-sdk/getting-started/readme/installation/authorization-process-in-detail?from=skill>
+and <https://docs.beefree.io/beefree-sdk/getting-started/readme/installation/how-the-uid-parameter-works?from=skill>.
 
 ## Request
 
@@ -127,7 +127,7 @@ Credentials belong to one application, so they belong to one type.
 `loginV2` accepts the credentials of every type; the token then starts the builder of that type.
 Credentials of a File Manager application start the File Manager, and `start()` is called without a template, see [file-manager.md](file-manager.md).
 Development applications (paid plans) are child applications with their own credentials.
-Source: <https://docs.beefree.io/beefree-sdk/getting-started/readme/create-an-application>.
+Source: <https://docs.beefree.io/beefree-sdk/getting-started/readme/create-an-application?from=skill>.
 
 A development application has the same type as its parent: an Email Builder application can only have Email Builder children, not a File Manager child.
 Confirmed in the Developer Console on 2026-10-01; the docs do not state it.

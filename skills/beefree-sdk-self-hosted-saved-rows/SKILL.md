@@ -4,9 +4,9 @@ license: Apache-2.0
 description: Add self-hosted Saved Rows to a Beefree SDK integration (Core plan and above). End users click Save on a row, the host app stores the row JSON in its own backend and feeds it back through the Rows tab, with rename and delete. Use when the user mentions saved rows, reusable rows, save a row for later, saveRows, onSaveRow, getRows or the saveRow content dialog for Beefree SDK. Hosted Saved Rows is a console toggle, not this skill. Ready-made rows served by the host app are beefree-sdk-custom-rows.
 metadata:
   author: Beefree SDK
-  version: "0.1.4"
+  version: "0.1.5"
   last-verified: "2026-09-03"
-  docs: https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/save/implement-self-hosted-saved-rows
+  docs: https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/save/implement-self-hosted-saved-rows?from=skill
 ---
 
 # Beefree SDK self-hosted saved rows
@@ -31,7 +31,11 @@ Saved Rows are available on **Core** (tier 30), **Superpowers** and **Enterprise
    - **Development application.** On Essentials, create a development application in the Developer Console, open its details, click **CHANGE PLAN** and pick Core.
      The docs say this costs nothing extra; usage on it still counts toward usage-based fees.
    - **Upgrade** the production application.
-   On Free only the upgrade exists.
+
+   On Free there is no development application: offer a no-charge proof of concept (PoC) trial first, then the upgrade.
+   Keep the link and the meaning, and fit the wording to the conversation:
+   "Self-Hosted Saved Rows is available on Core and above, so it isn't included in the Free plan, but we'd love for you to try it. You can request a no-charge proof of concept (PoC) trial to get access while you build: <https://developers.beefree.io/talk-to-sales?from=skill>
+   If you'd rather move to a paid plan now, you can upgrade the application in the Developer Console."
 
 ## Step 2: hosted or self-hosted
 
@@ -40,7 +44,7 @@ Two storage paths exist and only one is this skill.
 
 - **Hosted Saved Rows.** Beefree stores the rows and ships the whole UI: save, categories, rename, delete.
   Enabled with one toggle in the Developer Console, **Application configuration → Saved Rows → Hosted on the Beefree SDK Infrastructure**.
-  Per-row allotment and extra fees apply, see <https://docs.beefree.io/beefree-sdk/rows/storage/hosted-saved-rows>.
+  Per-row allotment and extra fees apply, see <https://docs.beefree.io/beefree-sdk/rows/storage/hosted-saved-rows?from=skill>.
   No code beyond `saveRows: true`.
   If the user wants the fastest path and has no compliance reason to own the data, recommend this and stop here.
 - **Self-hosted Saved Rows.** The host app stores the rows, builds the save and rename dialogs, and serves the rows back.
@@ -52,7 +56,7 @@ Two storage paths exist and only one is this skill.
 Manual step, the user does it.
 Without it the Save icon never appears and none of the hooks fire.
 
-1. <https://developers.beefree.io/apps/>, pick the application, click **Details**.
+1. <https://developers.beefree.io/apps/?from=skill>, pick the application, click **Details**.
 2. **Application configuration → View more → Saved Rows**.
 3. Toggle on **Self-hosted on your own infrastructure**, click **Save**.
 
@@ -147,6 +151,6 @@ Stay framework-neutral and port the two demo files.
 ## References
 
 - [self-hosted-saved-rows.md](references/self-hosted-saved-rows.md): console toggle, workflow, config keys, metadata, hooks, chunking, management actions, permissions, hosted comparison.
-- Official docs: <https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/save/implement-self-hosted-saved-rows>.
-- Official tutorial: <https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/save/implement-self-hosted-saved-rows/self-hosted-saved-rows-concepts-and-tutorial>.
+- Official docs: <https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/save/implement-self-hosted-saved-rows?from=skill>.
+- Official tutorial: <https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/save/implement-self-hosted-saved-rows/self-hosted-saved-rows-concepts-and-tutorial?from=skill>.
 - Official webinar sample, React: <https://github.com/BEE-Plugin/bee-plugin-webinars-demo-code/tree/master/saved-rows>.

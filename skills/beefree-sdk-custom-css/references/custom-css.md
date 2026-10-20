@@ -1,7 +1,7 @@
 # Custom CSS
 
-Source: <https://docs.beefree.io/beefree-sdk/other-customizations/appearance/custom-css> (read on 2026-09-02).
-Also mentioned in <https://docs.beefree.io/beefree-sdk/other-customizations/appearance/right-to-left-support>, which loads the RTL stylesheet through the same key.
+Source: <https://docs.beefree.io/beefree-sdk/other-customizations/appearance/custom-css?from=skill> (read on 2026-09-02).
+Also mentioned in <https://docs.beefree.io/beefree-sdk/other-customizations/appearance/right-to-left-support?from=skill>, which loads the RTL stylesheet through the same key.
 
 ## Availability
 
@@ -73,7 +73,7 @@ Reliable selectors:
   Changes to the HTML structure and to `--cs` classes are announced in advance.
 
 When the goal is to hide UI elements, the docs recommend checking Advanced Permissions first:
-<https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/advanced-permissions>.
+<https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/advanced-permissions?from=skill>.
 
 ## Official snippets
 

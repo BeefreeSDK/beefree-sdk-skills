@@ -180,7 +180,7 @@ else
   echo "Application type: $TYPE (product_handle '$HANDLE')."
 fi
 case "${HANDLE:-nl}" in
-  nl|fm) ;;
-  *)     echo "Note: the demo in assets/demo covers Email Builder and File Manager applications only." ;;
+  nl|page|pub|fm) ;;
+  *)     echo "Note: the demo in assets/demo covers Email Builder, Page Builder, Popup Builder and File Manager applications only." ;;
 esac
 exit 0

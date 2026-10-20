@@ -1,9 +1,9 @@
 # Beefree SDK skills
 
-Agent Skills for integrating [Beefree SDK](https://developers.beefree.io/), the embeddable email, page and popup builder.
+Agent Skills for integrating [Beefree SDK](https://developers.beefree.io/?from=skill), the embeddable email, page and popup builder.
 The skills follow the open [Agent Skills format](https://agentskills.io/specification), so they work with any coding agent that supports it: Claude Code, Cursor, Codex, GitHub Copilot, Gemini CLI, OpenCode and others.
 
-Each skill carries the technical facts it needs and links to the [official documentation](https://docs.beefree.io/beefree-sdk) for depth.
+Each skill carries the technical facts it needs and links to the [official documentation](https://docs.beefree.io/beefree-sdk?from=skill) for depth.
 
 ## Prerequisite
 
@@ -14,7 +14,7 @@ Sign up at <https://developers.beefree.io/signup?from=skill>.
 
 | Skill                                        | Use it when                                                                                          |
 | -------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| [`beefree-sdk-setup`](skills/beefree-sdk-setup/SKILL.md) | You start from scratch or add Beefree SDK to an existing app: authorization, loading the builder, first save; also a standalone File Manager |
+| [`beefree-sdk-setup`](skills/beefree-sdk-setup/SKILL.md) | You start from scratch or add Beefree SDK to an existing app: authorization, loading the email, page or popup builder, first save; also a standalone File Manager |
 | [`beefree-sdk-custom-css`](skills/beefree-sdk-custom-css/SKILL.md) | You want to change the builder UI beyond what Themes offer (Superpowers plan and above): rounded tabs, a hover effect on the content tiles, your own tile icons, `customCss`, safe selectors |
 | [`beefree-sdk-self-hosted-saved-rows`](skills/beefree-sdk-self-hosted-saved-rows/SKILL.md) | You want end users to save rows into your own backend and reuse them (Core plan and above): console toggle, `saveRow` dialog, `onSaveRow`, `getRows`, rename and delete |
 | [`beefree-sdk-custom-rows`](skills/beefree-sdk-custom-rows/SKILL.md) | You want to offer ready-made rows (headers, footers, product blocks) in the Rows tab from your own URLs (Core plan and above): `rowsConfiguration`, `externalContentURLs`, `selectedRowType`, row metadata, CORS |
@@ -93,8 +93,8 @@ skills/<skill-name>/
 
 ## Related resources
 
-- Documentation: <https://docs.beefree.io/beefree-sdk>
-- Developer Console: <https://developers.beefree.io/apps/>
+- Documentation: <https://docs.beefree.io/beefree-sdk?from=skill>
+- Developer Console: <https://developers.beefree.io/apps/?from=skill>
 - Agent Skills format: <https://agentskills.io/specification>
 - `skills` CLI: <https://github.com/vercel-labs/skills>
 - Documentation source: <https://github.com/BeefreeSDK/beefree-sdk-docs>

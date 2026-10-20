@@ -1,7 +1,7 @@
 # File Manager
 
-Source: <https://docs.beefree.io/beefree-sdk/file-manager/file-manager-application-overview>
-and <https://docs.beefree.io/beefree-sdk/server-side-configurations/server-side-options/storage-options>.
+Source: <https://docs.beefree.io/beefree-sdk/file-manager/file-manager-application-overview?from=skill>
+and <https://docs.beefree.io/beefree-sdk/server-side-configurations/server-side-options/storage-options?from=skill>.
 
 ## What it is
 
@@ -69,7 +69,7 @@ Beefree SDK storage charges nothing for storage and for the first 5 TB of delive
 
 ## Upload limits
 
-Source: <https://docs.beefree.io/beefree-sdk/file-manager/file-manager-application-overview/file-extensions-and-groups>.
+Source: <https://docs.beefree.io/beefree-sdk/file-manager/file-manager-application-overview/file-extensions-and-groups?from=skill>.
 
 - New applications accept images, videos and PDFs.
   Paid plans can allow more groups (office, text, zip, fonts, and so on) in the **Privacy & Security** section of the Developer Console.
@@ -81,4 +81,4 @@ Source: <https://docs.beefree.io/beefree-sdk/file-manager/file-manager-applicati
 ## Server side
 
 The Content Services API has File Manager endpoints that list, search, create, upload, move and delete a user's files and folders without opening the File Manager.
-Source: <https://docs.beefree.io/beefree-sdk/apis/content-services-api/file-manager>.
+Source: <https://docs.beefree.io/beefree-sdk/apis/content-services-api/file-manager?from=skill>.

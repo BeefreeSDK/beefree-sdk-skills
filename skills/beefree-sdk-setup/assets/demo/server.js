@@ -46,6 +46,8 @@ function readBody(req) {
 // Exchanges the server-side credentials for a Beefree SDK token.
 // The Beefree response body is forwarded unchanged: { access_token, v2 }.
 // The Client Secret never leaves this function and is never logged.
+// Demo only: no login and the uid comes from the request body. A real app puts this endpoint behind its
+// own login and takes the uid from the server-side session; see "Not for production" in README.md.
 async function handleToken(req, res) {
   const clientId = process.env.BEEFREE_CLIENT_ID
   const clientSecret = process.env.BEEFREE_CLIENT_SECRET

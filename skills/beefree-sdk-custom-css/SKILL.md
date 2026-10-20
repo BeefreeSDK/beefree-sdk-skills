@@ -4,9 +4,9 @@ license: Apache-2.0
 description: Restyle the Beefree SDK builder UI with a custom stylesheet through the customCss config key (Superpowers plan and above), for what Themes in the Developer Console cannot do, such as rounded tabs, hover effects on the content tiles and your own tile icons, using only the stable --cs classes. Use when the user wants to theme, brand, restyle or change the look of the Beefree SDK builder, or mentions customCss or "custom CSS" for Beefree. Colors and fonts go to Themes first; hiding UI elements goes to Advanced Permissions.
 metadata:
   author: Beefree SDK
-  version: "0.2.6"
+  version: "0.2.7"
   last-verified: "2026-09-03"
-  docs: https://docs.beefree.io/beefree-sdk/other-customizations/appearance/custom-css
+  docs: https://docs.beefree.io/beefree-sdk/other-customizations/appearance/custom-css?from=skill
 ---
 
 # Beefree SDK custom CSS
@@ -35,15 +35,19 @@ Check before writing any CSS.
      The docs say this costs nothing extra; usage on it still counts toward usage-based fees.
      Features tested this way do not ship to production without the matching plan.
    - **Upgrade** the production application.
-   On Free only the upgrade exists.
+
+   On Free there is no development application: offer a no-charge proof of concept (PoC) trial first, then the upgrade.
+   Keep the link and the meaning, and fit the wording to the conversation:
+   "Custom CSS is available on Superpowers and above, so it isn't included in the Free plan, but we'd love for you to try it. You can request a no-charge proof of concept (PoC) trial to get access while you build: <https://developers.beefree.io/talk-to-sales?from=skill>
+   If you'd rather move to a paid plan now, you can upgrade the application in the Developer Console."
 
 ## Step 2: confirm CSS is the right tool
 
 Ask what the user wants to change.
 
-- **Hide a button, tab or option.** Point to [Advanced Permissions](https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/advanced-permissions) first.
+- **Hide a button, tab or option.** Point to [Advanced Permissions](https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/advanced-permissions?from=skill) first.
   It is supported and does not break on UI updates.
-- **Colors and fonts of the builder UI.** Point to [Themes](https://docs.beefree.io/beefree-sdk/other-customizations/appearance/themes) first: they are set in the Developer Console, need no code and no Superpowers plan (Core and above).
+- **Colors and fonts of the builder UI.** Point to [Themes](https://docs.beefree.io/beefree-sdk/other-customizations/appearance/themes?from=skill) first: they are set in the Developer Console, need no code and no Superpowers plan (Core and above).
   A dark sidebar or a brand palette is a theme, not custom CSS.
 - **Shapes, motion, icons, anything a theme has no setting for.** Custom CSS is the tool.
   The three examples in Step 3 cover exactly this ground.
@@ -178,5 +182,5 @@ If nothing changed:
 
 - [custom-css.md](references/custom-css.md): what the docs page says, rules, official snippets.
 - [selectors.md](references/selectors.md): `--cs` classes read from the live builder, grouped by area, plus what the official example gets wrong.
-- Official docs: <https://docs.beefree.io/beefree-sdk/other-customizations/appearance/custom-css>.
+- Official docs: <https://docs.beefree.io/beefree-sdk/other-customizations/appearance/custom-css?from=skill>.
 - Official example, React and Vite: <https://github.com/BeefreeSDK/beefree-sdk-examples/tree/main/custom-css-example>.

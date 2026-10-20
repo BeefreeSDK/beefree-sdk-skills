@@ -1,10 +1,10 @@
 # Rows configuration
 
-Source: <https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/pre-build#rows-configuration> (read on 2026-09-03),
-with <https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/pre-build/implement-custom-rows>,
-<https://docs.beefree.io/beefree-sdk/rows/reusable-content/manage>,
-<https://docs.beefree.io/beefree-sdk/data-structures/row-metadata>
-and <https://docs.beefree.io/beefree-sdk/rows/reusable-content> (playground snippet).
+Source: <https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/pre-build?from=skill#rows-configuration> (read on 2026-09-03),
+with <https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/pre-build/implement-custom-rows?from=skill>,
+<https://docs.beefree.io/beefree-sdk/rows/reusable-content/manage?from=skill>,
+<https://docs.beefree.io/beefree-sdk/data-structures/row-metadata?from=skill>
+and <https://docs.beefree.io/beefree-sdk/rows/reusable-content?from=skill> (playground snippet).
 
 ## Availability
 
@@ -71,7 +71,7 @@ Two safe sources:
 - **Cut from a template.** Take a row from `page.rows` of a design exported by `onSave`, add a `metadata` block, store it. The demo lists are built this way from the sample template.
 - **Saved by users.** Rows returned by `onSaveRow` already carry `metadata`. Serve them back per category.
 
-For rows generated from data (products, articles) the docs point to the Simple Schema: <https://docs.beefree.io/beefree-sdk/data-structures/simple-schema/row-schema> and <https://github.com/BeefreeSDK/beefree-sdk-simple-schema>.
+For rows generated from data (products, articles) the docs point to the Simple Schema: <https://docs.beefree.io/beefree-sdk/data-structures/simple-schema/row-schema?from=skill> and <https://github.com/BeefreeSDK/beefree-sdk-simple-schema>.
 
 ## Who fetches the rows URL, and why `localhost` fails
 
@@ -151,7 +151,7 @@ contentDialog: {
 - Results appear highlighted in the Rows panel.
 - `instance.loadRows()` opens the same dialog from the host app's own UI, for example a "Load footers" button in the toolbar. The handler can resolve at once without showing anything.
 
-Source: <https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/content-dialog>.
+Source: <https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/content-dialog?from=skill>.
 
 ## Changing lists at run time
 

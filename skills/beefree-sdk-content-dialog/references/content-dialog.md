@@ -1,9 +1,9 @@
 # Content dialog
 
-Source: <https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/content-dialog> (read on 2026-09-03),
-with <https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/special-links-and-merge-tags>,
-<https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/custom-file-picker>
-and <https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/display-conditions>.
+Source: <https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/content-dialog?from=skill> (read on 2026-09-03),
+with <https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/special-links-and-merge-tags?from=skill>,
+<https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/custom-file-picker?from=skill>
+and <https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/display-conditions?from=skill>.
 Examples: <https://github.com/BeefreeSDK/beefree-sdk-examples/tree/main/conditional-rows-example> and <https://github.com/BeefreeSDK/beefree-sdk-demos> (read on 2026-09-03).
 
 ## Availability

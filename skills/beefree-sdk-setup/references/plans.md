@@ -1,7 +1,7 @@
 # Plans and feature availability
 
-Source: <https://developers.beefree.io/pricing-plans> (section "Compare features", read on 2026-09-02)
-and <https://docs.beefree.io/beefree-sdk/getting-started/readme/development-applications>.
+Source: <https://developers.beefree.io/pricing-plans?from=skill> (section "Compare features", read on 2026-09-02)
+and <https://docs.beefree.io/beefree-sdk/getting-started/readme/development-applications?from=skill>.
 The pricing page changes over time.
 When a feature matters, confirm the row on the page before promising it.
 
@@ -29,7 +29,7 @@ The check reflects only the credentials it was run with.
 
 ## Using a feature above the plan
 
-Two paths.
+Two paths on paid plans, plus a trial on Free.
 
 1. **Test it in a development application.**
    Development applications are child applications of a production application, available on paid plans.
@@ -40,8 +40,20 @@ Two paths.
    Features tested this way cannot be deployed to production unless the production plan includes them.
 2. **Upgrade the production application** to the plan that includes the feature.
 
-On Free there is no development application, so the only path is an upgrade.
 Usage-based fees still apply to development applications.
+
+### On the Free plan
+
+There is no development application on Free.
+Offer a no-charge proof of concept (PoC) trial first, then the upgrade.
+The trial is requested from the Beefree team at <https://developers.beefree.io/talk-to-sales?from=skill>.
+Keep the link and the meaning of this message, and fit the wording to the conversation:
+
+> {Feature} is available on {Plan} and above, so it isn't included in the Free plan, but we'd love for you to try it. You can request a no-charge proof of concept (PoC) trial to get access while you build: <https://developers.beefree.io/talk-to-sales?from=skill>
+>
+> If you'd rather move to a paid plan now, you can upgrade the application in the Developer Console.
+
+`{Plan}` is the "Min plan" of the feature in the table below.
 
 ## Feature availability
 
@@ -54,19 +66,19 @@ Feature names link to the docs page the pricing table points to.
 
 | Feature                                                                                                                                            | Free | Essentials | Core     | Superpowers | Enterprise |       Min plan |
 |----------------------------------------------------------------------------------------------------------------------------------------------------|:----:|:----------:|:--------:|:-----------:|:----------:|---------------:|
-| [Dialogs For Content Search](https://docs.beefree.io/content-dialog/)                                                                              | —    | ✓          | ✓        | ✓           | ✓          |  20 Essentials |
-| [MCP Server](https://docs.beefree.io/beefree-sdk/ai-and-mcp/getting-started)                                                                       | —    | ✓          | ✓        | ✓           | ✓          |  20 Essentials |
-| [Custom File Storage](https://docs.beefree.io/connect-your-own-file-storage/)                                                                      | —    | ✓          | ✓        | ✓           | ✓          |  20 Essentials |
-| [Themes](https://docs.beefree.io/custom-look-feel/)                                                                                                | —    | —          | ✓        | ✓           | ✓          |        30 Core |
-| [Custom Languages](https://docs.beefree.io/custom-languages/)                                                                                      | —    | —          | ✓        | ✓           | ✓          |        30 Core |
-| [Custom Rows](https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/pre-build/implement-custom-rows)                                    | —    | —          | ✓        | ✓           | ✓          |        30 Core |
-| [Hosted Saved Rows](https://docs.beefree.io/beefree-sdk/rows/storage/hosted-saved-rows)                                                            | —    | —          | 100 rows | 250 rows    | 1000 rows  |        30 Core |
-| [Self-Hosted Saved Rows](https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/save)                                                    | —    | —          | ✓        | ✓           | ✓          |        30 Core |
-| [Synced Rows (Saved and Sync Content Blocks Across Designs)](https://docs.beefree.io/beefree-sdk/rows/reusable-content/sync/implement-synced-rows) | —    | —          | ✓        | ✓           | ✓          |        30 Core |
-| [Single Row Edit Mode](https://docs.beefree.io/beefree-sdk/rows/reusable-content/sync/initialize-edit-single-row-mode)                             | —    | —          | ✓        | ✓           | ✓          |        30 Core |
-| [Display Conditions](https://docs.beefree.io/display-conditions/)                                                                                  | —    | —          | ✓        | ✓           | ✓          |        30 Core |
-| [Smart Merge Tags](https://docs.beefree.io/smart-merge-tags/)                                                                                      | —    | —          | ✓        | ✓           | ✓          |        30 Core |
-| [Custom Attributes](https://docs.beefree.io/custom-attributes/)                                                                                    | —    | —          | ✓        | ✓           | ✓          |        30 Core |
-| [Custom CSS](https://docs.beefree.io/custom-css/)                                                                                                  | —    | —          | —        | ✓           | ✓          | 40 Superpowers |
-| [Custom File Picker](https://docs.beefree.io/custom-file-picker/)                                                                                  | —    | —          | —        | ✓           | ✓          | 40 Superpowers |
-| [Advanced Permissions](https://docs.beefree.io/advanced-permissions/)                                                                              | —    | —          | —        | ✓           | ✓          | 40 Superpowers |
+| [Dialogs For Content Search](https://docs.beefree.io/content-dialog/?from=skill)                                                                              | —    | ✓          | ✓        | ✓           | ✓          |  20 Essentials |
+| [MCP Server](https://docs.beefree.io/beefree-sdk/ai-and-mcp/getting-started?from=skill)                                                                       | —    | ✓          | ✓        | ✓           | ✓          |  20 Essentials |
+| [Custom File Storage](https://docs.beefree.io/connect-your-own-file-storage/?from=skill)                                                                      | —    | ✓          | ✓        | ✓           | ✓          |  20 Essentials |
+| [Themes](https://docs.beefree.io/custom-look-feel/?from=skill)                                                                                                | —    | —          | ✓        | ✓           | ✓          |        30 Core |
+| [Custom Languages](https://docs.beefree.io/custom-languages/?from=skill)                                                                                      | —    | —          | ✓        | ✓           | ✓          |        30 Core |
+| [Custom Rows](https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/pre-build/implement-custom-rows?from=skill)                                    | —    | —          | ✓        | ✓           | ✓          |        30 Core |
+| [Hosted Saved Rows](https://docs.beefree.io/beefree-sdk/rows/storage/hosted-saved-rows?from=skill)                                                            | —    | —          | 100 rows | 250 rows    | 1000 rows  |        30 Core |
+| [Self-Hosted Saved Rows](https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/save?from=skill)                                                    | —    | —          | ✓        | ✓           | ✓          |        30 Core |
+| [Synced Rows (Saved and Sync Content Blocks Across Designs)](https://docs.beefree.io/beefree-sdk/rows/reusable-content/sync/implement-synced-rows?from=skill) | —    | —          | ✓        | ✓           | ✓          |        30 Core |
+| [Single Row Edit Mode](https://docs.beefree.io/beefree-sdk/rows/reusable-content/sync/initialize-edit-single-row-mode?from=skill)                             | —    | —          | ✓        | ✓           | ✓          |        30 Core |
+| [Display Conditions](https://docs.beefree.io/display-conditions/?from=skill)                                                                                  | —    | —          | ✓        | ✓           | ✓          |        30 Core |
+| [Smart Merge Tags](https://docs.beefree.io/smart-merge-tags/?from=skill)                                                                                      | —    | —          | ✓        | ✓           | ✓          |        30 Core |
+| [Custom Attributes](https://docs.beefree.io/custom-attributes/?from=skill)                                                                                    | —    | —          | ✓        | ✓           | ✓          |        30 Core |
+| [Custom CSS](https://docs.beefree.io/custom-css/?from=skill)                                                                                                  | —    | —          | —        | ✓           | ✓          | 40 Superpowers |
+| [Custom File Picker](https://docs.beefree.io/custom-file-picker/?from=skill)                                                                                  | —    | —          | —        | ✓           | ✓          | 40 Superpowers |
+| [Advanced Permissions](https://docs.beefree.io/advanced-permissions/?from=skill)                                                                              | —    | —          | —        | ✓           | ✓          | 40 Superpowers |

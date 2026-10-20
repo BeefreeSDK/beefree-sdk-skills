@@ -7,7 +7,7 @@
    svg's own background, so the layout does not move. One rule per tile; tiles without a rule keep
    their default icon. Relative url() values resolve against this file's URL.
 
-   Rules from https://docs.beefree.io/beefree-sdk/other-customizations/appearance/custom-css:
+   Rules from https://docs.beefree.io/beefree-sdk/other-customizations/appearance/custom-css?from=skill:
    the hook is the --cs class, "svg" under it is a plain tag as in the docs' own snippet, no chains.
    Icon color is inside each SVG file (stroke="#7c3aed"): edit the files to match your palette.
    The svg box also gets a light violet rounded backdrop so the icon stands out on the tile. */

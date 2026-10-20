@@ -4,9 +4,9 @@ license: Apache-2.0
 description: Add Display Conditions to a Beefree SDK integration (Core plan and above) so end users show or hide a row per recipient with the host app's own templating syntax, such as Liquid or Handlebars. Covers the rowDisplayConditions array, before and after rules for multi-row logic, a condition builder dialog, roles and permissions. Use when the user mentions display conditions, conditional rows, rowDisplayConditions, show a row only to a segment, personalized or conditional content per recipient, if and endif around a row, or a condition builder for Beefree SDK. Merge tags and other content dialogs have their own skill.
 metadata:
   author: Beefree SDK
-  version: "0.1.3"
+  version: "0.1.4"
   last-verified: "2026-09-03"
-  docs: https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/display-conditions
+  docs: https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/display-conditions?from=skill
 ---
 
 # Beefree SDK display conditions
@@ -34,14 +34,18 @@ Display Conditions are available on **Core** (tier 30), **Superpowers** and **En
    - **Development application.** On Essentials, create a development application in the Developer Console, open its details, click **CHANGE PLAN** and pick Core.
      The docs say this costs nothing extra; usage on it still counts toward usage-based fees.
    - **Upgrade** the production application.
-   On Free only the upgrade exists.
+
+   On Free there is no development application: offer a no-charge proof of concept (PoC) trial first, then the upgrade.
+   Keep the link and the meaning, and fit the wording to the conversation:
+   "Display Conditions is available on Core and above, so it isn't included in the Free plan, but we'd love for you to try it. You can request a no-charge proof of concept (PoC) trial to get access while you build: <https://developers.beefree.io/talk-to-sales?from=skill>
+   If you'd rather move to a paid plan now, you can upgrade the application in the Developer Console."
 
 ## Step 2: turn the feature on in the Developer Console
 
 Manual step, the user does it.
 The feature is off in every new application, and without it no condition widget appears and the dialog never fires.
 
-1. <https://developers.beefree.io/apps/>, pick the application, open its details.
+1. <https://developers.beefree.io/apps/?from=skill>, pick the application, open its details.
 2. In the application configuration, find the **Row Display Conditions** switch and turn it on.
    The docs call it **Display Conditions**; the console label observed on 2026-09-03 says Row Display Conditions.
    The sub-switch **Highlight rows with Display Conditions** turns on with it; it draws a dashed border and the condition name on the stage.
@@ -175,7 +179,7 @@ Verified on 2026-09-03 with a Superpowers application, Chrome, Node 20, after th
 ## References
 
 - [display-conditions.md](references/display-conditions.md): console switch, the condition object and its rules, the array, the dialog and its current-condition argument, custom conditions, roles and permissions, stage and preview behaviour, observations from the official example.
-- Official docs: <https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/display-conditions>.
-- Content dialog, display conditions handler: <https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/content-dialog#display-conditions>.
-- Advanced permissions for the widget: <https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/advanced-permissions#add-condition-and-edit-condition-buttons>.
+- Official docs: <https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/display-conditions?from=skill>.
+- Content dialog, display conditions handler: <https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/content-dialog?from=skill#display-conditions>.
+- Advanced permissions for the widget: <https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/advanced-permissions?from=skill#add-condition-and-edit-condition-buttons>.
 - Official example, React: <https://github.com/BeefreeSDK/beefree-sdk-examples/tree/main/conditional-rows-example>.

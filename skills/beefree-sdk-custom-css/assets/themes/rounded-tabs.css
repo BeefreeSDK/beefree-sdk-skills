@@ -1,7 +1,7 @@
 /* Example 1: rounded tabs. Shows what themes cannot do: change the shape of the sidebar tab strip.
    Serve it from your own HTTPS origin and point beeConfig.customCss at it.
 
-   Rules from https://docs.beefree.io/beefree-sdk/other-customizations/appearance/custom-css:
+   Rules from https://docs.beefree.io/beefree-sdk/other-customizations/appearance/custom-css?from=skill:
    only --cs class hooks, every rule scoped under body.bee--cs, nothing on the stage.
    Classes observed in builder 3.55.1 (Email) on 2026-09-03, see references/selectors.md.
    The violet is illustrative: replace the color values with your palette. */

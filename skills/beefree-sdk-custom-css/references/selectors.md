@@ -1,6 +1,6 @@
 # Selectors observed in the builder
 
-Source: <https://docs.beefree.io/beefree-sdk/other-customizations/appearance/custom-css> (rules, read on 2026-09-03).
+Source: <https://docs.beefree.io/beefree-sdk/other-customizations/appearance/custom-css?from=skill> (rules, read on 2026-09-03).
 The class list itself is observed, not documented: Beefree does not publish a list of `--cs` classes.
 The docs say only class names with the `--cs` suffix are reliable, and that changes to them and to the HTML structure are announced in advance.
 

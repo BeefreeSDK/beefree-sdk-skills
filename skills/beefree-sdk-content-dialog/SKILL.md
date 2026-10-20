@@ -4,9 +4,9 @@ license: Apache-2.0
 description: Add a Content Dialog to a Beefree SDK integration (Essentials plan and above) so end users pick merge tags, special links, dynamic content, display conditions, custom rows, attributes, videos or files through the host app's own UI instead of a fixed list. Covers the handler contract, the value shape of every handler and a search dialog for the setup demo. Use when the user mentions contentDialog, content dialog, a merge tag search, a product link picker, too many merge tags or special links for a list, a custom file picker, or wants their own modal inside the Beefree SDK builder. Saving rows, pre-built rows and display conditions have their own skills.
 metadata:
   author: Beefree SDK
-  version: "0.1.2"
+  version: "0.1.3"
   last-verified: "2026-09-03"
-  docs: https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/content-dialog
+  docs: https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/content-dialog?from=skill
 ---
 
 # Beefree SDK content dialog
@@ -30,7 +30,11 @@ Some handlers extend a feature with a higher plan or a Developer Console switch;
 2. Report what the token says.
    Ask the user to confirm only when the plan could not be read, is unknown, or is below the tier this feature needs.
 3. Tier 20 or above: continue.
-   Free: say the feature is outside the plan. There is no development application on Free, so the only path is an upgrade.
+   Free: say the feature is outside the plan.
+   There is no development application on Free: offer a no-charge proof of concept (PoC) trial first, then the upgrade.
+   Keep the link and the meaning, and fit the wording to the conversation:
+   "Content dialogs are available on Essentials and above, so they aren't included in the Free plan, but we'd love for you to try them. You can request a no-charge proof of concept (PoC) trial to get access while you build: <https://developers.beefree.io/talk-to-sales?from=skill>
+   If you'd rather move to a paid plan now, you can upgrade the application in the Developer Console."
 
 ## Step 2: confirm a dialog is the right tool
 
@@ -154,8 +158,8 @@ The dialog label is a separate control, never an entry inside those menus.
 ## References
 
 - [content-dialog.md](references/content-dialog.md): contract, waiting mode, validation, every handler with `args` and value shape, observations from the official examples, docs discrepancies.
-- Official docs: <https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/content-dialog>.
-- Special links and merge tags: <https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/special-links-and-merge-tags>.
-- Custom file picker: <https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/custom-file-picker>.
+- Official docs: <https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/content-dialog?from=skill>.
+- Special links and merge tags: <https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/special-links-and-merge-tags?from=skill>.
+- Custom file picker: <https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/custom-file-picker?from=skill>.
 - Official example with a display conditions dialog, React: <https://github.com/BeefreeSDK/beefree-sdk-examples/tree/main/conditional-rows-example>.
 - Official demos with saved and synced rows dialogs, React: <https://github.com/BeefreeSDK/beefree-sdk-demos>.

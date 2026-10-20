@@ -19,6 +19,10 @@ function setStatus(text, isError) {
 const beeConfig = {
   container: 'beefree-sdk-container',
   language: 'en-US',
+  // Tells Beefree this builder was started from the skill's demo, the way @beefree.io/sdk sends "[npm] @beefree.io/sdk".
+  // Remove both lines when you copy this config into your own app. Keep the version equal to metadata.version in SKILL.md.
+  startOrigin: '[skill] beefree-sdk-setup',
+  startOriginVersion: '0.4.0',
   onWarning: function (warning) {
     console.warn('Beefree SDK warning', warning)
   },

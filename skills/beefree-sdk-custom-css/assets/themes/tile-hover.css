@@ -1,7 +1,7 @@
 /* Example 2: tile hover. Shows what themes cannot do: motion and a highlight when a content tile is hovered.
    Serve it from your own HTTPS origin and point beeConfig.customCss at it.
 
-   Rules from https://docs.beefree.io/beefree-sdk/other-customizations/appearance/custom-css:
+   Rules from https://docs.beefree.io/beefree-sdk/other-customizations/appearance/custom-css?from=skill:
    only --cs class hooks, every rule scoped under body.bee--cs, nothing on the stage.
    :hover sits on a --cs class, it is not an extra hook. The label is the --cs class inside the tile.
    Classes observed in builder 3.55.1 (Email) on 2026-09-03, see references/selectors.md.

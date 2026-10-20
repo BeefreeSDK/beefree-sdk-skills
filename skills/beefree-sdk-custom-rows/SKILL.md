@@ -4,9 +4,9 @@ license: Apache-2.0
 description: Add pre-built rows (Custom Rows) to the Rows tab of the Beefree SDK builder with the rowsConfiguration config key (Core plan and above). The host app serves lists of ready-made rows such as headers, footers or product blocks from its own URLs, next to the built-in default and empty rows. Use when the user mentions custom rows, pre-built, pre-set or ready-made rows, a row catalog or library, rowsConfiguration, externalContentURLs, defaultRows, emptyRows or selectedRowType for Beefree SDK. Not for letting end users save their own rows, which beefree-sdk-self-hosted-saved-rows covers.
 metadata:
   author: Beefree SDK
-  version: "0.1.5"
+  version: "0.1.6"
   last-verified: "2026-09-03"
-  docs: https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/pre-build
+  docs: https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/pre-build?from=skill
 ---
 
 # Beefree SDK custom rows
@@ -31,7 +31,11 @@ Custom Rows are available on **Core** (tier 30), **Superpowers** and **Enterpris
    - **Development application.** On Essentials, create a development application in the Developer Console, open its details, click **CHANGE PLAN** and pick Core.
      The docs say this costs nothing extra; usage on it still counts toward usage-based fees.
    - **Upgrade** the production application.
-   On Free only the upgrade exists.
+
+   On Free there is no development application: offer a no-charge proof of concept (PoC) trial first, then the upgrade.
+   Keep the link and the meaning, and fit the wording to the conversation:
+   "Custom Rows is available on Core and above, so it isn't included in the Free plan, but we'd love for you to try it. You can request a no-charge proof of concept (PoC) trial to get access while you build: <https://developers.beefree.io/talk-to-sales?from=skill>
+   If you'd rather move to a paid plan now, you can upgrade the application in the Developer Console."
 
 ## Step 2: confirm pre-built rows are the right tool
 
@@ -187,7 +191,7 @@ Stay framework-neutral.
 ## References
 
 - [rows-configuration.md](references/rows-configuration.md): every key, the response shape observed on the live endpoint, who fetches the URL and why `localhost` fails, metadata fields, order and limits, the content dialog for dynamic lists.
-- Official docs: <https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/pre-build>.
-- Implement Custom Rows, dynamic lists and `loadRows`: <https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/pre-build/implement-custom-rows>.
-- Manage reusable content, order and limits: <https://docs.beefree.io/beefree-sdk/rows/reusable-content/manage>.
-- Playground to try `rowsConfiguration` live: <https://developers.beefree.io/playground>.
+- Official docs: <https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/pre-build?from=skill>.
+- Implement Custom Rows, dynamic lists and `loadRows`: <https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/pre-build/implement-custom-rows?from=skill>.
+- Manage reusable content, order and limits: <https://docs.beefree.io/beefree-sdk/rows/reusable-content/manage?from=skill>.
+- Playground to try `rowsConfiguration` live: <https://developers.beefree.io/playground?from=skill>.

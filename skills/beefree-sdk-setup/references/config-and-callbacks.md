@@ -1,7 +1,7 @@
 # Configuration and callbacks
 
-Source: <https://docs.beefree.io/beefree-sdk/getting-started/readme/installation/configuration-parameters>
-and <https://docs.beefree.io/beefree-sdk/getting-started/readme/installation/methods-and-events>.
+Source: <https://docs.beefree.io/beefree-sdk/getting-started/readme/installation/configuration-parameters?from=skill>
+and <https://docs.beefree.io/beefree-sdk/getting-started/readme/installation/methods-and-events?from=skill>.
 
 ## Minimal config
 
@@ -94,8 +94,9 @@ The npm wrapper signature for start is `start(beeConfig, template, bucketDir?, o
 
 ## Sample templates
 
-- Live samples: `https://rsrc.getbee.io/api/templates/<name>` (GET, returns the template JSON).
+- Live email samples: `https://rsrc.getbee.io/api/templates/<name>` (GET, returns the template JSON).
   `m-bee` is the one used by the official examples and by the demo.
+  An unknown name does not fail: the endpoint returns an email template for any name (observed on 2026-10-16), so a typo goes unnoticed.
   Names observed to resolve on 2026-09-03, not enumerated in the docs:
 
   | name                                                             | content                                                |
@@ -108,3 +109,4 @@ The npm wrapper signature for start is `start(beeConfig, template, bucketDir?, o
 - Repository: <https://github.com/BeefreeSDK/beefree-sdk-assets-templates>.
   The v3 email JSON files there contain a `repository_path` placeholder for image URLs.
   Replace it before loading them.
+- Page and Popup samples: see [page-and-popup.md](page-and-popup.md#sample-templates).

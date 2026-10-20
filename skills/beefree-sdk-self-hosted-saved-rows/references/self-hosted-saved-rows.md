@@ -1,11 +1,11 @@
 # Self-hosted saved rows
 
-Source: <https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/save/implement-self-hosted-saved-rows> (read on 2026-09-02),
-with <https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/save/implement-self-hosted-saved-rows/self-hosted-saved-rows-concepts-and-tutorial>,
-<https://docs.beefree.io/beefree-sdk/rows/reusable-content/manage>,
-<https://docs.beefree.io/beefree-sdk/rows/storage>,
-<https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/content-dialog#save-rows>
-and <https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/advanced-permissions#lock-or-hide-the-save-icon>.
+Source: <https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/save/implement-self-hosted-saved-rows?from=skill> (read on 2026-09-02),
+with <https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/save/implement-self-hosted-saved-rows/self-hosted-saved-rows-concepts-and-tutorial?from=skill>,
+<https://docs.beefree.io/beefree-sdk/rows/reusable-content/manage?from=skill>,
+<https://docs.beefree.io/beefree-sdk/rows/storage?from=skill>,
+<https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/content-dialog?from=skill#save-rows>
+and <https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/advanced-permissions?from=skill#lock-or-hide-the-save-icon>.
 
 ## Availability
 
@@ -152,5 +152,5 @@ advancedPermissions: {
 
 ## Editing a saved row on its own
 
-Edit Single Row mode loads `pageJSON` from `onSaveRow` into a builder that edits one row: <https://docs.beefree.io/beefree-sdk/rows/reusable-content/sync/initialize-edit-single-row-mode>.
+Edit Single Row mode loads `pageJSON` from `onSaveRow` into a builder that edits one row: <https://docs.beefree.io/beefree-sdk/rows/reusable-content/sync/initialize-edit-single-row-mode?from=skill>.
 Out of scope for this skill.
