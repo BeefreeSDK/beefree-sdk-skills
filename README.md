@@ -14,7 +14,7 @@ Sign up at <https://developers.beefree.io/signup?from=skill>.
 
 | Skill                                        | Use it when                                                                                          |
 | -------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| [`beefree-sdk-setup`](skills/beefree-sdk-setup/SKILL.md) | You start from scratch or add Beefree SDK to an existing app: authorization, loading the email, page or popup builder, first save; also a standalone File Manager |
+| [`beefree-sdk-setup`](skills/beefree-sdk-setup/) | You start from scratch or add Beefree SDK to an existing app: authorization, loading the email, page or popup builder, first save; also a standalone File Manager |
 | [`beefree-sdk-custom-css`](skills/beefree-sdk-custom-css/SKILL.md) | You want to change the builder UI beyond what Themes offer (Superpowers plan and above): rounded tabs, a hover effect on the content tiles, your own tile icons, `customCss`, safe selectors |
 | [`beefree-sdk-self-hosted-saved-rows`](skills/beefree-sdk-self-hosted-saved-rows/SKILL.md) | You want end users to save rows into your own backend and reuse them (Core plan and above): console toggle, `saveRow` dialog, `onSaveRow`, `getRows`, rename and delete |
 | [`beefree-sdk-custom-rows`](skills/beefree-sdk-custom-rows/SKILL.md) | You want to offer ready-made rows (headers, footers, product blocks) in the Rows tab from your own URLs (Core plan and above): `rowsConfiguration`, `externalContentURLs`, `selectedRowType`, row metadata, CORS |
@@ -81,11 +81,18 @@ Let users search our merge tags from a dialog inside the Beefree SDK builder.
 Agents with slash commands can also call the skill by name, for example `/beefree-sdk-setup` in Claude Code.
 Keep your Client Secret out of the prompt: put it in a `.env` file and tell the agent where it is.
 
+## Feedback
+
+We're improving these skills based on how they work in real projects, and your experience helps decide what we fix and build next.
+If you've used `beefree-sdk-setup`, please tell us how it went in this [short feedback form](https://growens.typeform.com/to/kHKGaBxd).
+It takes about two minutes.
+
 ## Layout of a skill
 
 ```text
 skills/<skill-name>/
 ├── SKILL.md        # instructions loaded when the skill activates
+├── README.md       # optional, a short page for people browsing the repo
 ├── references/     # facts the agent reads on demand, each linked to the docs page it came from
 ├── assets/         # ready-to-copy files, such as the local demo
 └── scripts/        # helper scripts, runtime-agnostic (bash, node)
